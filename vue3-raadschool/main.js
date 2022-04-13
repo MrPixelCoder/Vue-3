@@ -1,6 +1,7 @@
 Vue.createApp({
     data() {
       return {
+        showModal:true,
         message: 'Hello Vue!',
         taskTitle:'',
         taskDesc:'',
@@ -17,7 +18,7 @@ Vue.createApp({
             completed:false,
           },
           {
-            title:"asjdfasdf ",
+            title:"Lorem, ipsum dolor 4. ",
             desc:'some description 4',
             completed:true,
           },
@@ -48,6 +49,6 @@ Vue.createApp({
       },
       removeItem(){
         console.log('remove item');
-      }
+      },
     }
   }).mount('#app')

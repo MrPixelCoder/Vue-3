@@ -36,12 +36,26 @@
                             {{job.desc}}
                         </small>
 
-                        <img src="icons/trash.svg" alt="trash" @click.stop="removeItem()">sdfsdf
+                        <img src="icons/trash.svg" alt="trash" @click.stop="showModal = !showModal">
                     </li>
                     
                 </ul>
             </div>
 
+        </div>
+        
+        <!-- The Modal -->
+        <div v-show="showModal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>Are you sure you want to erase this Task?</p>
+                </div>
+                <div class="modal-footer">
+                    <button @click="">Close</button>
+                    <button @click="removeItem()">Delete</button>
+                </div>
+            </div>
         </div>
         
     </div>
