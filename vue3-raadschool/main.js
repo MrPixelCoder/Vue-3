@@ -32,7 +32,8 @@ Vue.createApp({
     },
     methods:{
       // add typed title to dolist
-      addTask(){
+      addTask(e){
+        e.preventDefault();
         if(this.taskTitle.length > 0) {
           // task var
           var task = {
@@ -48,7 +49,12 @@ Vue.createApp({
         }
       },
       removeItem(){
-        console.log('remove item');
+        // console.log('remove item');
+      },
+      Cancel() {
+        // console.log('CANCEL SUBMIT');
+        this.showModal = false;
+        this.$router.push({ d: 'users' });
       },
     }
   }).mount('#app')

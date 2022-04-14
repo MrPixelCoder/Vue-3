@@ -5,20 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue 3</title>
+
+    <!-- =====  BOX ICONS  ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- =====  FOUNDATION  ===== -->
     <link rel="stylesheet" href="foundation.min.css"  />
+
+    <!-- =====  CSS  ===== -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-
+    <!-- ===== APP START ===== -->
     <div id="app">
+
+        <!-- ===== TITLE ===== -->
         <h1>{{message}}</h1>
 
+        <!-- ===== GRID CONTAINER START ===== -->
         <div class="grid-container">
 
             <div class="grid-x grid-padding-x">
                 <div class="medium-6 cell">
-                    <input type="text" name="title" id="title" placeholder="pls type" v-model="taskTitle">
-                    <textarea name="desc" id="desc" cols="30" rows="3" placeholder="task info" v-model="taskDesc"></textarea>
+                    <input type="text" name="title" id="title" placeholder="pls type" v-model="taskTitle" @keyup.enter="addTask">
+                    <textarea name="desc" id="desc" cols="30" rows="3" placeholder="task info" v-model="taskDesc" @keyup.enter="addTask"></textarea>
                 </div>
                 <div class="medium-6 cell">
                     <button class="submit success button" @click="addTask()" v-if="taskTitle.length > 0">add</button>
@@ -30,37 +41,51 @@
                 <ul class="list-group ">
                     <li :class="['list-group-item',{done:job.completed}]" v-for="(job,i) in doList" :key="i" @click="job.completed = !job.completed">
                         {{job.title}}
-                        
                         <br>
                         <small v-if="showDesc">
                             {{job.desc}}
                         </small>
-
-                        <img src="icons/trash.svg" alt="trash" @click.stop="showModal = !showModal">
+                        <i class='bx bxs-edit' @click.stop></i>
+                        <i class='bx bx-trash' @click.stop="showModal = !showModal"></i>
                     </li>
                     
                 </ul>
+
             </div>
 
         </div>
+        <!-- ===== GRID CONTAINER END ===== -->
         
-        <!-- The Modal -->
-        <div v-show="showModal">
-            <!-- Modal content -->
+        <!-- ===== THE MODAL CONTENT START ===== -->
+        <div class="modal" v-show="showModal">
+
+            <!-- ===== Modal content ===== -->
             <div class="modal-content">
+                <div>
+                    <i class='bx bx-x-circle'></i>
+                </div>
                 <div class="modal-body">
                     <p>Are you sure you want to erase this Task?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni ipsum nisi, doloremque nobis nam obcaecati a! Tempora temporibus molestias aperiam!</p>
                 </div>
+                <h></h>
                 <div class="modal-footer">
-                    <button @click="">Close</button>
+                    <button @click.prevent="Cancel">Close</button>
                     <button @click="removeItem()">Delete</button>
                 </div>
             </div>
-        </div>
-        
-    </div>
+            <!-- ===== THE MODAL CONTENT END ===== -->
 
+        </div>
+        <!-- ===== The Modal END ===== -->
+
+    </div>
+    <!-- ===== APP END ===== -->
+
+    <!-- =====  VUE  ===== -->
     <script src="vue.global.js"></script>
+
+    <!-- =====  JS  ===== -->
     <script src="main.js"></script>
 </body>
 </html>
