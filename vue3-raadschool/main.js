@@ -2,7 +2,7 @@ Vue.createApp({
     data() {
       return {
         showModal:true,
-        message: 'Hello Vue!',
+        message: 'لیست انجام کارها',
         taskTitle:'',
         taskDesc:'',
         showDesc:true,

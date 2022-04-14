@@ -1,9 +1,78 @@
+    /* FONT INFORMATION
+    –––––––––––––––––––––––––––––––––––––––––-------------------------------------------------------------------––––––––– */
+    /* https://rastikerdar.github.io/vazir-font/ */
+    @font-face {
+      font-family: Vazir;
+      src: url('font/Vazir-Regular-FD.eot');
+      src: url('font/Vazir-Regular-FD.eot?#iefix') format('embedded-opentype'),
+          url('font/Vazir-Regular-FD.woff2') format('woff2'),
+          url('font/Vazir-Regular-FD.woff') format('woff'),
+          url('font/Vazir-Regular-FD.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: Vazir;
+      src: url('font/Vazir-Bold-FD.eot');
+      src: url('font/Vazir-Bold-FD.eot?#iefix') format('embedded-opentype'),
+          url('font/Vazir-Bold-FD.woff2') format('woff2'),
+          url('font/Vazir-Bold-FD.woff') format('woff'),
+          url('font/Vazir-Bold-FD.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: Vazir;
+      src: url('font/Vazir-Black-FD.eot');
+      src: url('font/Vazir-Black-FD.eot?#iefix') format('embedded-opentype'),
+          url('font/Vazir-Black-FD.woff2') format('woff2'),
+          url('font/Vazir-Black-FD.woff') format('woff'),
+          url('font/Vazir-Black-FD.ttf') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: Vazir;
+      src: url('font/Vazir-Medium-FD.eot');
+      src: url('font/Vazir-Medium-FD.eot?#iefix') format('embedded-opentype'),
+          url('font/Vazir-Medium-FD.woff2') format('woff2'),
+          url('font/Vazir-Medium-FD.woff') format('woff'),
+          url('font/Vazir-Medium-FD.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: Vazir;
+      src: url('font/Vazir-Light-FD.eot');
+      src: url('font/Vazir-Light-FD.eot?#iefix') format('embedded-opentype'),
+          url('font/Vazir-Light-FD.woff2') format('woff2'),
+          url('font/Vazir-Light-FD.woff') format('woff'),
+          url('font/Vazir-Light-FD.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: Vazir;
+      src: url('font/Vazir-Thin-FD.eot');
+      src: url('font/Vazir-Thin-FD.eot?#iefix') format('embedded-opentype'),
+          url('font/Vazir-Thin-FD.woff2') format('woff2'),
+          url('font/Vazir-Thin-FD.woff') format('woff'),
+          url('font/Vazir-Thin-FD.ttf') format('truetype');
+      font-weight: 100;
+      font-style: normal;
+  }
+      /* FONT INFORMATION END
+  –––––––––––––––––––––––––––––––––––––––––--------------------------------------------------------------------––––––––– */
+
 /********** GLOBAL **********/
 body {
   min-height: 100vh;
-  font-family: "Inter", Arial, sans-serif;
+  font-family:Vazir;
 }
 
+h1 {
+  font-family: Vazir;
+}
 
 .list-group {
     margin-bottom: 1rem;

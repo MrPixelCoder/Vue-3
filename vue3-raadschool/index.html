@@ -29,7 +29,7 @@
             <div class="grid-x grid-padding-x">
                 <div class="medium-6 cell">
                     <input type="text" name="title" id="title" placeholder="pls type" v-model="taskTitle" @keyup.enter="addTask">
-                    <textarea name="desc" id="desc" cols="30" rows="3" placeholder="task info" v-model="taskDesc" @keyup.enter="addTask"></textarea>
+                    <textarea name="desc" id="desc" cols="30" rows="3" placeholder="task info" v-model="taskDesc"></textarea>
                 </div>
                 <div class="medium-6 cell">
                     <button class="submit success button" @click="addTask()" v-if="taskTitle.length > 0">add</button>
