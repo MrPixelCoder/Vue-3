@@ -20,7 +20,7 @@ Vue.createApp({
           {
             title:"Lorem, ipsum dolor 4. ",
             desc:'some description 4',
-            completed:true,
+            completed:false,
           },
           {
             title:"as4df6 Lorem, ipsum.",
@@ -35,8 +35,7 @@ Vue.createApp({
     },
     methods:{
       // add typed title to dolist
-      addTask(e){
-        e.preventDefault();
+      addTask(){
         if(this.taskTitle.length > 0) {
           // task var
           var task = {
@@ -62,7 +61,7 @@ Vue.createApp({
       Cancel() {
         // console.log('CANCEL SUBMIT');
         this.showModal = false;
-        this.$router.push({ d: 'users' });
+
       },
     }
   }).mount('#app')
