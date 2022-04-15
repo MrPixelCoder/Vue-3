@@ -27,7 +27,10 @@ Vue.createApp({
             desc:'some description f',
             completed:false,
           },
-        ]
+        ],
+        task : {
+          title: '', description:'',
+        },
       }
     },
     methods:{
@@ -48,8 +51,13 @@ Vue.createApp({
           this.taskDesc = ''
         }
       },
-      removeItem(){
-        // console.log('remove item');
+      deleteEvent: function(index){
+        console.log(index);
+        console.log(this.doList);
+        this.doList.splice(index, 1);
+      },
+      removeAll:function(task){
+        this.doList.splice(this.task);
       },
       Cancel() {
         // console.log('CANCEL SUBMIT');

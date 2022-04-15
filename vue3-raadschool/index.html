@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue 3</title>
+    <title>Todo App</title>
 
     <!-- =====  BOX ICONS  ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -38,6 +38,7 @@
             </div>
 
             <div class="grid-x grid-padding-x">
+
                 <ul class="list-group ">
                     <li :class="['list-group-item',{done:job.completed}]" v-for="(job,i) in doList" :key="i" @click="job.completed = !job.completed">
                         {{job.title}}
@@ -52,6 +53,8 @@
                 </ul>
 
             </div>
+
+            <button class="submit alert button" @click="removeAll(task)">Remove All</button>
 
         </div>
         <!-- ===== GRID CONTAINER END ===== -->
@@ -71,7 +74,7 @@
                 <h></h>
                 <div class="modal-footer">
                     <button @click.prevent="Cancel">Close</button>
-                    <button @click="removeItem()">Delete</button>
+                    <button @click="deleteEvent(index)">Delete</button>
                 </div>
             </div>
             <!-- ===== THE MODAL CONTENT END ===== -->
