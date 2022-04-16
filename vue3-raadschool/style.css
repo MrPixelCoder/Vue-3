@@ -75,6 +75,7 @@ body {
   margin: 0;
   padding: 0;
   align-items: center;
+  font-family: Vazir;
 } 
 
 @keyframes gradient {
@@ -96,9 +97,10 @@ h1 {
 }
 
 li {
-  width: 410px;
+  width: 500px;
   border-radius: 2px;
   border: solid 3px gray;
+  margin-right: 5px;
   margin-bottom: 8px;
   border-right: none;
   border-left: none;
@@ -115,9 +117,20 @@ li {
 }
 
 .bx-trash, .bxs-edit {
-  float: right;
+  float: left;
   font-size: 23px;
   color: rgb(45, 45, 45);
+}
+
+.bx-trash:hover, 
+.bxs-edit:hover {
+  color: greenyellow;
+}
+
+.button {
+  border-radius: .5rem;
+  font-size: 16px;
+  margin-right: 5px;
 }
 
 textarea {
@@ -263,7 +276,7 @@ textarea {
 
 .modal-footer :nth-child(2) {
   color: red;
-  float: right;
+  float: left;
 }
 
 .modal-footer :nth-child(2):hover {

@@ -6,25 +6,26 @@ Vue.createApp({
         taskTitle:'',
         taskDesc:'',
         showDesc:true,
+        removeItemIndex:null,
         doList:[
           {
-            title:"Lorem, ipsum.",
-            desc:'some description 1',
+            title:"انجام یک کار مفید",
+            desc:'اضافه کردن توضیحات',
             completed:false,
           },
           {
-            title:"Lorem, ipsum dolor.",
-            desc:'some description 3',
+            title:"ساخت ویدِیو برای یوتویوب",
+            desc:'اضافه کردن توضیحات',
             completed:false,
           },
           {
-            title:"Lorem, ipsum dolor 4. ",
-            desc:'some description 4',
+            title:"یادگیری Vue",
+            desc:'اضافه کردن توضیحات',
             completed:false,
           },
           {
-            title:"as4df6 Lorem, ipsum.",
-            desc:'some description f',
+            title:"به اتمام رساندن کار قبلی",
+            desc:'اضافه کردن توضیحات',
             completed:false,
           },
         ],
@@ -54,6 +55,7 @@ Vue.createApp({
         console.log(index);
         console.log(this.doList);
         this.doList.splice(index, 1);
+        this.showModal = false;
       },
       removeAll:function(task){
         this.doList.splice(this.task);

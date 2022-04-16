@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,8 +32,8 @@
                     <textarea name="desc" id="desc" cols="30" rows="3" placeholder="Enter description" v-model="taskDesc"></textarea>
                 </div>
                 <div class="medium-12 cell">
-                    <button class="submit success button" @click="addTask()" v-if="taskTitle.length > 0">+</button>
-                    <button :class="['submit button toggleInfo',{primary:showDesc},{success:!showDesc}]" @click="showDesc = !showDesc">toggle info</button>
+                    <button class="submit primary button" @click="addTask()" v-if="taskTitle.length > 0">+</button>
+                    <button :class="['submit button toggleInfo',{primary:showDesc},{warning:!showDesc}]" @click="showDesc = !showDesc">مصالعه بیشتر</button>
                 </div>
             </div>
 
@@ -55,7 +55,7 @@
 
             </div>
 
-            <button class="submit alert button" @click="removeAll(task)">Remove All</button>
+            <button class="submit alert button" @click="removeAll(task)">پاک کردن همه</button>
 
         </div>
         <!-- ===== GRID CONTAINER END ===== -->
@@ -69,13 +69,13 @@
                     <i class='bx bx-x-circle'></i>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure you want to erase this Task?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni ipsum nisi, doloremque nobis nam obcaecati a! Tempora temporibus molestias aperiam!</p>
+                    <p>آیا شما اطمینان به پاک کردن این کار دارید؟</p>
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد.</p>
                 </div>
                 <h></h>
                 <div class="modal-footer">
-                    <button @click.prevent="Cancel">Close</button>
-                    <button @click="deleteEvent(index)">Delete</button>
+                    <button @click.prevent="Cancel">بستن</button>
+                    <button @click="deleteEvent(job,index)">پاک کردن</button>
                 </div>
             </div>
             <!-- ===== THE MODAL CONTENT END ===== -->
