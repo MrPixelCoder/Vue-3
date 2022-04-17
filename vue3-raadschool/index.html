@@ -52,7 +52,9 @@
 
                         <!-- ===== TITLE TEXT ===== -->
                         {{job.title}}
-                        <i class='bx bx-trash' @click.stop="showModal = !showModal"></i>
+
+                        <!-- ===== TRASH,EDIT BUTTON'S ===== -->
+                        <i class='bx bx-trash' @click.stop="showModal = !showModal,removeItemIndex = i" ></i>
                         <i class='bx bxs-edit' @click.stop></i>
 
                         <br>
@@ -63,7 +65,6 @@
                         </small>
 
                     </li>
-                    
                 </ul>
 
             </div>
@@ -75,10 +76,11 @@
         <!-- ===== GRID CONTAINER END ===== -->
         
         <!-- ===== THE MODAL CONTENT START ===== -->
-        <div class="modal" v-show="showModal">
+        <div class="modal" v-show="showModal" @click.stop="showModal = false">
 
             <!-- ===== Modal content ===== -->
             <div class="modal-content">
+
                 <div>
                     <i class='bx bx-x-circle'></i>
                 </div>
@@ -94,7 +96,7 @@
                 <!-- ===== MODAL BUTTON'S ===== -->
                 <div class="modal-footer">
                     <button @click.prevent="Cancel">بستن</button>
-                    <button @click="deleteEvent(job,index)">پاک کردن</button>
+                    <button @click="deleteEvent(removeItemIndex)">پاک کردن</button>
                 </div>
 
             </div>

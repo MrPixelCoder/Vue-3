@@ -2,6 +2,8 @@ Vue.createApp({
     data() {
       return {
         showModal:true,
+        showModal:false,
+        removeItemIndex:null,
 
         // title
         message: 'لیست انجام کارها',
@@ -54,10 +56,11 @@ Vue.createApp({
         }
       },
       // delete just a task from dolist
-      deleteEvent: function(index){
-        console.log(index);
-        console.log(this.doList);
-        this.doList.splice(index, 1);
+      deleteEvent(i){
+        console.log(i);
+        // console.log(this.doList);
+        this.doList.splice(i, 1);
+        this.removeItemIndex = i ;
         this.showModal = false;
       },
       // delete all task from dolist
