@@ -27,34 +27,48 @@
             <h1>{{message}}</h1>
 
             <div class="grid-x grid-padding-x">
+
+                <!-- ===== MAIN INPUT'S ===== -->
                 <div class="medium-12 cell">
-                    <input class="input" type="text" name="title" id="title" placeholder="please type" v-model="taskTitle" @keyup.enter="addTask">
-                    <textarea name="desc" id="desc" cols="30" rows="3" placeholder="Enter description" v-model="taskDesc"></textarea>
+                    <input id="input" type="text" name="title" id="title" placeholder="کار خود را وارد نمایید" v-model="taskTitle" @keyup.enter="addTask">
+                    <textarea name="desc" id="desc" cols="30" rows="3" placeholder="توضیحات را وارد کنید" v-model="taskDesc"></textarea>
                 </div>
+
+                <!-- ===== ADD,MORE INFO BUTTON'S ===== -->
                 <div class="medium-12 cell">
                     <button class="submit primary button" @click="addTask()" v-if="taskTitle.length > 0">+</button>
                     <button :class="['submit button toggleInfo',{primary:showDesc},{warning:!showDesc}]" @click="showDesc = !showDesc">مصالعه بیشتر</button>
                 </div>
+
             </div>
 
             <div class="grid-x grid-padding-x">
 
                 <ul class="list-group ">
                     <li :class="['list-group-item',{done:job.completed}]" v-for="(job,i) in doList" :key="i" @click="job.completed = !job.completed">
+
+                        <!-- ===== MAIN INPUT ===== -->
                         <input id="c1" type="checkbox">
+
+                        <!-- ===== TITLE TEXT ===== -->
                         {{job.title}}
                         <i class='bx bx-trash' @click.stop="showModal = !showModal"></i>
                         <i class='bx bxs-edit' @click.stop></i>
+
                         <br>
+
+                        <!-- ===== MORE INFO TEXT ===== -->
                         <small v-if="showDesc">
                             {{job.desc}}
                         </small>
+
                     </li>
                     
                 </ul>
 
             </div>
 
+            <!-- ===== DELETE ALL BUTTON ===== -->
             <button class="submit alert button" @click="removeAll(task)">پاک کردن همه</button>
 
         </div>
@@ -68,15 +82,21 @@
                 <div>
                     <i class='bx bx-x-circle'></i>
                 </div>
+
+                <!-- ===== ALARM TEXT OF MODAL ===== -->
                 <div class="modal-body">
                     <p>آیا شما اطمینان به پاک کردن این کار دارید؟</p>
                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد.</p>
                 </div>
+
                 <h></h>
+
+                <!-- ===== MODAL BUTTON'S ===== -->
                 <div class="modal-footer">
                     <button @click.prevent="Cancel">بستن</button>
                     <button @click="deleteEvent(job,index)">پاک کردن</button>
                 </div>
+
             </div>
             <!-- ===== THE MODAL CONTENT END ===== -->
 
@@ -91,5 +111,6 @@
 
     <!-- =====  JS  ===== -->
     <script src="main.js"></script>
+
 </body>
 </html>

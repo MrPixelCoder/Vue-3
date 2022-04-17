@@ -2,11 +2,13 @@ Vue.createApp({
     data() {
       return {
         showModal:true,
+
+        // title
         message: 'لیست انجام کارها',
+
         taskTitle:'',
         taskDesc:'',
         showDesc:true,
-        removeItemIndex:null,
         doList:[
           {
             title:"انجام یک کار مفید",
@@ -51,15 +53,18 @@ Vue.createApp({
           this.taskDesc = ''
         }
       },
+      // delete just a task from dolist
       deleteEvent: function(index){
         console.log(index);
         console.log(this.doList);
         this.doList.splice(index, 1);
         this.showModal = false;
       },
+      // delete all task from dolist
       removeAll:function(task){
         this.doList.splice(this.task);
       },
+      // cancel clearing
       Cancel() {
         // console.log('CANCEL SUBMIT');
         this.showModal = false;
