@@ -1,16 +1,8 @@
 Vue.createApp({
     data() {
       return {
-        showModal:true,
-        showModal:false,
-        removeItemIndex:null,
-
         // title
         message: 'لیست انجام کارها',
-
-        taskTitle:'',
-        taskDesc:'',
-        showDesc:true,
         doList:[
           {
             title:"انجام یک کار مفید",
@@ -36,6 +28,14 @@ Vue.createApp({
         task : {
           title: '', description:'',
         },
+        taskTitle:'',
+        taskDesc:'',
+        showModal:true,
+        showModal:false,
+        showDesc:true,
+        removeItemIndex:null,
+        isChanging:false,
+        changIndex:null,
       }
     },
     methods:{
@@ -69,9 +69,21 @@ Vue.createApp({
       },
       // cancel clearing
       Cancel() {
-        // console.log('CANCEL SUBMIT');
+        // console.log('CANCEL SUBMIT'); 
         this.showModal = false;
-
+      },
+      // changing all the text of the task
+      variation(job ,i){
+        this.taskTitle = job.title;
+        this.taskDesc = job.desc;
+        this.isChanging = true;
+        this.changIndex = i;
+      },
+      change(){
+        this.doList[this.changIndex].title = this.taskTitle;
+        this.doList[this.changIndex].desc = this.taskDesc;
+        this.taskTitle=''
+        this.taskDesc=''
       },
     }
   }).mount('#app')

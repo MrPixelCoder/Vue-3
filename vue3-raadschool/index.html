@@ -36,8 +36,9 @@
 
                 <!-- ===== ADD,MORE INFO BUTTON'S ===== -->
                 <div class="medium-12 cell">
-                    <button class="submit primary button" @click="addTask()" v-if="taskTitle.length > 0">+</button>
-                    <button :class="['submit button toggleInfo',{primary:showDesc},{warning:!showDesc}]" @click="showDesc = !showDesc">مصالعه بیشتر</button>
+                    <button class="submit primary button" @click="addTask()" v-if="taskTitle.length > 0 && !isChanging">+</button>
+                    <button :class="['submit button toggleInfo',{primary:showDesc},{warning:!showDesc}]" @click="showDesc = !showDesc" v-if="taskTitle.length > 0 && !isChanging">مصالعه بیشتر</button>
+                    <button class="submit alert button"  @click.stop="change()" v-if="isChanging">تغییر</button>
                 </div>
 
             </div>
@@ -55,7 +56,7 @@
 
                         <!-- ===== TRASH,EDIT BUTTON'S ===== -->
                         <i class='bx bx-trash' @click.stop="showModal = !showModal,removeItemIndex = i" ></i>
-                        <i class='bx bxs-edit' @click.stop></i>
+                        <i class='bx bxs-edit'@click.stop="variation(job ,i)"></i>
 
                         <br>
 
